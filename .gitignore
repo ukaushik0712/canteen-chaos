@@ -42,3 +42,6 @@ tmp/
 
 BUGS.md
 BUG_LOG_OLD.md
+
+# stop tracking local changes on the menu items
+menu.json

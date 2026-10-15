@@ -1,41 +1,38 @@
 # Debug log
 
-Your notes. One entry per bug you fixed, using the template below.
+# Bugs
+## CC-01 : "The search suggestions are behind everything"
 
-This file is read as carefully as your code. A correct fix you cannot
-explain counts for little; a bug you could not fix but investigated
-honestly still counts for something.
+**Reproduced:** The issue with the matching search items hidden behind the rest of the page, typing anything does not show the correct results.
 
-Delete the example before you submit.
+**Cause:** Most definitely a small enough z-index which causes the elements of the search bar to render behind the other sections which have a higher z-index.
 
+**Fix:** Set the z-index in [style.css](./frontend/style.css#L758) to an arbitrarily high value so the search bar elements render in front always.
 
+**Checked:** Search bar displays the matched results properly now.
 
-## Example — delete this
+**Time:** About 1 minute. Such issues are almost always correspond to lower z-index values.
 
-### CC-99 — "The cart total is wrong"
+---
 
-**Reproduced:** Added 2 dosas at Rs. 60 each. The cart showed
-Rs. 119.99999 instead of Rs. 130. Happened every time, on any dish with
-a price ending in .50.
+## CC-02: "Can't read anything in dark mode"
 
-**Cause:** The total was being added up with plain floating point and
-never rounded, so 0.1 + 0.2 style errors showed up on screen. The
-rounding helper existed but this one place was not using it.
+**Reproduced:** The name and price of the dish are not visible in dark mode on the dish cards.
 
-**Fix:** Ran the total through the existing rounding helper instead of
-adding a new one, so every price on screen goes through the same path.
+**Cause:** The issue was because of a hard coded hex which did not inherit the value from the parent element, causing the title and the prices to be rendered in a dark toned colour irrespective of the theme. This was identified by following the inheritance trace of the `color` property on the `name-btn` class:
+![name-btn styles](./bug-ss/cc-02.png)
 
-**Checked:** Cart, checkout and the order screen all show Rs. 130 now.
-Prices without decimals still show without a trailing .00.
+**Fix:** The issue was fixed by changing the `color` in [styles.css](./frontend/style.css#L295) property to inherit the parent elements style so the theme specific hex is respected.
 
-**Time:** about 40 minutes, most of it working out that the cart and the
-order screen round in different places.
+**Checked:** The names and the price are properly displayed.
 
+**Time:** About 2 minutes. Followed the style traces in dev tools.
 
+---
 
-## CC-0X — "<the complaint, in short>"
+## CC-09: "The menu shows more dishes than it should"
 
-**Reproduced:**
+**Reproduced:** 
 
 **Cause:**
 
@@ -46,25 +43,18 @@ order screen round in different places.
 **Time:**
 
 
+---
 
-## Could not fix
+# Extra credit
+## Unreported Bugs
+## CC-U1: Price Filter on Menu Page shows Incosistent Results
 
-For anything you investigated but did not solve. Say what you tried and
-where you got to. This is worth marks — leaving it blank when you got
-stuck is not.
+**Reproduced:** 
 
-### CC-0X — "<the complaint>"
+**Cause:**
 
-**What I tried:**
+**Fix:**
 
-**Where I got to:**
+**Checked:**
 
-**What I would try next:**
-
-
-
-## Extra credit
-
-Anything not on the bug log: a problem you found yourself, a test you
-wrote, or a fix you are unsure about. Same format, plus one line on how
-you noticed it.
+**Time:**

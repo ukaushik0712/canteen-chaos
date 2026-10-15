@@ -1,12 +1,9 @@
-# Bug log
-
-
+d# Bug log
 Complaints were collected from students and canteen staff over the last week,
 Each one is what a person told us:
 
 nobody has looked at the code yet,
 working out the solution is your job for the following tasks! 
-
 
 **There are 10 problem statements** Fix as many as you can!
 Nobody is expected to finish all of them, but we suggest everyone to give a shot.
@@ -18,19 +15,21 @@ what was  wrong, and what you changed. **This is a requirement.**
 you may work in any order. If one has you stuck for over an hour, leave it, **note
 what you tried**, and move on  that note is worth marks too
 
+---
 
-
-### CC-01 : "The search suggestions are behind everything"
+<details>
+<summary><s>CC-01 : "The search suggestions are behind everything"</s> FIXED</summary>
 
 > "I start typing a dish name and the list of suggestions comes up, but
 > it's stuck behind the rest of the page. I can only click the very top
 > bit of it. The rest I can see, sort of, but clicking does nothing."
 
 Reported by: a student, on a laptop
+</details>
 
 
-
-### CC-02: "Can't read anything in dark mode"
+<details>
+<summary><s>CC-02: "Can't read anything in dark mode"</s></summary>
 
 > "I switched the site to dark mode and now the dish names and the prices
 > are almost invisible. The grey line under the name is fine, it's just
@@ -38,7 +37,7 @@ Reported by: a student, on a laptop
 
 Reported by: a student. others say it looks like this the moment they
 open the site, without changing anything
-
+</details>
 
 
 ### CC-03: "The menu is wider than my phone"
@@ -49,7 +48,6 @@ open the site, without changing anything
 Reported by: a student, on a phone
 
 
-
 ### CC-04: "The buttons don't work on my tablet"
 
 > "Add to Cart does nothing. The star to save a dish does nothing either.
@@ -57,7 +55,6 @@ Reported by: a student, on a phone
 > works on my friend's phone. Only my tablet?"
 
 Reported by: a student, on a tablet
-
 
 
 ### CC-05: "The category bar scrolls away on my phone"
@@ -96,14 +93,14 @@ Reported by: canteen staff
 Reported by: canteen staff
 
 
-
-### CC-09: "The menu shows more dishes than it should"
+<details>
+<summary><s>CC-09: "The menu shows more dishes than it should"</s> FIXED</summary>
 
 > "The page is supposed to show a few dishes at a time and load more as
 > you scroll. It just dumps a much longer list straight away!"
 
 Reported by: a student
-
+</details>
 
 
 ### CC-10: "Sorting by price is backwards"
@@ -114,7 +111,7 @@ Reported by: a student
 
 Reported by: a student.
 
-
+---
 
 ## Notes
 
@@ -125,6 +122,7 @@ Reported by: a student.
   show up. Part of the task is working out what :)
 - Stock can end up in a strange state while you test. Reset it with
   `git checkout -- backend/data/` and restart the server.
+
 ## Extra credit
 
 None of this is required, and none of it is needed to clear the task. just brownie points
