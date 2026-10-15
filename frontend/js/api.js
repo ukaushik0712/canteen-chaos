@@ -152,7 +152,7 @@ const api = {
 
   /* orders */
   getOrder: (token) => request(`/orders/${token}`),
-  listOrders: (params = {}) => request('/orders' + query(params), { key: 'orders' }),
+  listOrders: (params = {}) => request('/orders' + query({ ...params, userId: deviceId() }), { key: 'orders' }), // fixes cc-u2
   setStatus: (token, status, manual) =>
     request(`/orders/${token}/status`, { method: 'PATCH', body: { status, manual } }),
   rateOrder: (token, ratings) =>

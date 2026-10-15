@@ -1,4 +1,4 @@
-d# Bug log
+sd# Bug log
 Complaints were collected from students and canteen staff over the last week,
 Each one is what a person told us:
 
@@ -65,14 +65,14 @@ Reported by: a student, on a tablet
 Reported by: a student, on a phone
 
 
-
-### CC-06: "I ordered more than they had"
+<summary>
+<details><s>CC-06: "I ordered more than they had"</s> FIXED</details>
 
 > "The counter says only 2 samosas were left but it let me order 5, and
 > the order went through fine. When I got there they only had 2?"
 
 Reported by: canteen staff
-
+</summary>
 
 
 ### CC-07: "Cancelling makes it worse"

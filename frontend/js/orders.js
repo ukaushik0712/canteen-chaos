@@ -128,6 +128,7 @@ async function loadMyOrders() {
   render(ordersList, skeletonRows(3));
 
   let orders = [];
+
   try {
     const data = await api.listOrders({ memberId: deviceId(), limit: 25 });
     orders = data.orders;

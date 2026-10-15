@@ -98,7 +98,7 @@ function paginate(list, page = 1, limit = 12) {
   const items = list.slice(start, start + perPage);
 
   return {
-    items: items, // fixes cc-09 and cc-u1
+    items, // fixes cc-09 and cc-u1
     page: pageNum,
     limit: perPage,
     total: list.length,

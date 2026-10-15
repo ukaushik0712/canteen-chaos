@@ -32,15 +32,15 @@
 
 ## CC-09: "The menu shows more dishes than it should"
 
-**Reproduced:** 
+**Reproduced:** The menu page showed all 37 available dishes by default, contrary to the expected step loading behaviour.
 
-**Cause:**
+**Cause:** The issue was caused because the [`paginate`](./backend/logic/search.js#L94) function returned the provided list of items as-is without any modifications.
 
-**Fix:**
+**Fix:** The issue was fixed by simply returning the slicd list of items instead of the entire list as is.
 
-**Checked:**
+**Checked:** The issue is now fixed with 5 dishes shown by default, adding 5 more on each scroll.
 
-**Time:**
+**Time:** About 5 minutes.
 
 
 ---
@@ -48,6 +48,7 @@
 # Extra credit
 ## Unreported Bugs
 ## CC-U1: Price Filter on Menu Page shows Incosistent Results
+TODO: add data here (issue fixed in previous commit)
 
 **Reproduced:** 
 
@@ -58,3 +59,6 @@
 **Checked:**
 
 **Time:**
+
+## CC-U2: Orders page does not show orders
+TODO: add data (issue fixed in current commit)
