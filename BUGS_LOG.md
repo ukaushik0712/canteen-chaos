@@ -1,4 +1,4 @@
-d# Bug log
+# Bug log
 
 <details>
 <summary><s>CC-01 : "The search suggestions are behind everything"</s> FIXED</summary>
@@ -87,13 +87,15 @@ Reported by: a student
 </details>
 
 
-### CC-10: "Sorting by price is backwards"
+<details>
+<summary><s>CC-10: "Sorting by price is backwards"</s> FIXED</summary>
 
 > "I picked 'price: low to high' and the most expensive things came first.
 > I tried the other option and that gave me the cheap ones. Both are the
 > wrong way round."
 
 Reported by: a student.
+</details>
 
 ---
 

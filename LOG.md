@@ -56,6 +56,17 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 **Time:** About 5 minutes.
 
+---
+
+## CC-10: "Sorting by price is backwards"
+
+**Reproduced:** The "low to high" and "high to low" filters on the Menu page return opposite results.
+
+**Cause:** The issue was because of the wrong comparison functions being supplied to the sort function, as identified in [`search.js`](./backend/logic/search.js#L79). `a` denotes the first element, `b` denotes the second element the sort function considers. Since the comparison function is `a.price - b.price`, if the output of this is negative, a.price is placed before b.price, i.e the function will sort items in ascending order. The original definition however had the opposite order: `b.price - a.price` which caused items to be sorted in descending order in the "low to high" filter. Same with "high to low" filter.
+
+**Fix:** The issue was fixed by simply swapping the comparison functions for `price-asc` and `price-desc` filters in [`search.js`](./backend/logic/search.js#L79).
+
+**Time:** About 2 minutes
 
 ---
 
