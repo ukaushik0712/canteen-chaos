@@ -33,32 +33,33 @@ open the site, without changing anything
 Reported by: a student, on a phone
 </details>
 
-### CC-04: "The buttons don't work on my tablet"
+<details>
+<summary><s>CC-04: "The buttons don't work on my tablet"</s></summary>
 
 > "Add to Cart does nothing. The star to save a dish does nothing either.
 > The buttons look completely normal. It works fine on my laptop, and it
 > works on my friend's phone. Only my tablet?"
 
 Reported by: a student, on a tablet
+</details>
 
-
-### CC-05: "The category bar scrolls away on my phone"
+<details>
+<summary><s>CC-05: "The category bar scrolls away on my phone"</s></summary>
 
 > "On smaller screens, the category and filter bar scrolls away instead of
 > staying visible at the top while I scroll down through the menu dishes."
 
 Reported by: a student, on a phone
+</details>
 
-
-<summary>
-<details><s>CC-06: "I ordered more than they had"</s> FIXED</details>
+<details>
+<summary><s>CC-06: "I ordered more than they had"</s> FIXED</summary>
 
 > "The counter says only 2 samosas were left but it let me order 5, and
 > the order went through fine. When I got there they only had 2?"
 
 Reported by: canteen staff
-</summary>
-
+</details>
 
 <details>
 <summary><s>CC-07: "Cancelling makes it worse"</s> FIXED</summary>

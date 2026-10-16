@@ -98,8 +98,6 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 **Time:** About 2 minutes
 
----
-
 ## Extras
 ## Unreported Bugs
 ### CC-U1: Price Filter on Menu Page shows Incosistent Results
