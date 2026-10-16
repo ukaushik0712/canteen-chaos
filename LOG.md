@@ -30,6 +30,12 @@
 
 ---
 
+## CC-03: "The menu is wider than my phone"
+
+**Reproduced:** The issue is **unreproducible**. I tried all viewports of a standard phone device, the cards were responsible on all except below 305px (where the favourite/star button goes out of screen). Making the cards responsive for a smaller screen is unrealistic (and frankly unachievable today) for a modern smartphone since all of them have pretty much 360px+ width. The narrowest I tried is 320px with the star button just clipping out, although the functionality was still retained.
+
+---
+
 ## CC-07: "Cancelling makes it worse"
 
 **Reproduced:** The issue was reproduced by placing an order of 1 Rajma Chawal (with 5 in stock). Upon cancelling this order, the quantity was reduced to 3.

@@ -1,4 +1,4 @@
-d# Bug log
+# Bug log
 
 <details>
 <summary><s>CC-01 : "The search suggestions are behind everything"</s> FIXED</summary>
@@ -23,13 +23,14 @@ open the site, without changing anything
 </details>
 
 
-### CC-03: "The menu is wider than my phone"
+<details>
+<summary><s>CC-03: "The menu is wider than my phone"</s> UNREPRODUCIBLE</summary>
 
 > "I have to scroll sideways to see the whole menu, and the Add to Cart
 > buttons on the right-hand dishes are cut off the edge of the screen"
 
 Reported by: a student, on a phone
-
+</details>
 
 ### CC-04: "The buttons don't work on my tablet"
 
