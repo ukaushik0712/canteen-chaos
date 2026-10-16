@@ -1,7 +1,7 @@
 # Debug log
 
-# Bugs
-## CC-01 : "The search suggestions are behind everything"
+## Bugs
+### CC-01 : "The search suggestions are behind everything"
 
 **Reproduced:** The issue with the matching search items hidden behind the rest of the page, typing anything does not show the correct results.
 
@@ -15,7 +15,7 @@
 
 ---
 
-## CC-02: "Can't read anything in dark mode"
+### CC-02: "Can't read anything in dark mode"
 
 **Reproduced:** The name and price of the dish are not visible in dark mode on the dish cards.
 
@@ -30,13 +30,13 @@
 
 ---
 
-## CC-03: "The menu is wider than my phone"
+### CC-03: "The menu is wider than my phone"
 
 **Reproduced:** The issue is **unreproducible**. I tried all viewports of a standard phone device, the cards were responsible on all except below 305px (where the favourite/star button goes out of screen). Making the cards responsive for a smaller screen is unrealistic (and frankly unachievable today) for a modern smartphone since all of them have pretty much 360px+ width. The narrowest I tried is 320px with the star button just clipping out, although the functionality was still retained.
 
 ---
 
-## CC-07: "Cancelling makes it worse"
+### CC-07: "Cancelling makes it worse"
 
 **Reproduced:** The issue was reproduced by placing an order of 1 Rajma Chawal (with 5 in stock). Upon cancelling this order, the quantity was reduced to 3.
 
@@ -50,7 +50,19 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 ---
 
-## CC-08: "An old coupon still works"
+### CC-06: "I ordered more than they had"
+
+**Reproduced:** Ordering more than the available stock is possible.
+
+**Cause:** This happens because the quantity of the dish in the cart is not validated against the stock of the item itself, allowing users to add as much of the dish as they want.
+
+**Fix:** The issue was fixed by simple adding a new comparison to check whether the quantity of the stock is less than the quantity of the dish being added. If this is true, then an error is shown to the user.
+
+**Time:** About 3 minutes.
+
+---
+
+### CC-08: "An old coupon still works"
 
 **Reproduced:** The code FRESHERS24 is applicable on the checkout page.
 
@@ -62,7 +74,7 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 ---
 
-## CC-09: "The menu shows more dishes than it should"
+### CC-09: "The menu shows more dishes than it should"
 
 **Reproduced:** The menu page showed all 37 available dishes by default, contrary to the expected step loading behaviour.
 
@@ -76,7 +88,7 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 ---
 
-## CC-10: "Sorting by price is backwards"
+### CC-10: "Sorting by price is backwards"
 
 **Reproduced:** The "low to high" and "high to low" filters on the Menu page return opposite results.
 
@@ -88,9 +100,9 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 ---
 
-# Extra credit
+## Extras
 ## Unreported Bugs
-## CC-U1: Price Filter on Menu Page shows Incosistent Results
+### CC-U1: Price Filter on Menu Page shows Incosistent Results
 
 **Reproduced:** The price slider/filter on the menu page showed incosistent results, such as showing all cards even though the lowest price filter (under 20 rupees) was selected, despite there being only one such applicable item. The issue was however not observed when the slider was slowly decreased to the lowest filter, the correct dish was then shown.
 
@@ -102,7 +114,7 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 **Time:** About 15 minutes. I thought the issue was being caused by updates to the global `state` variable and I kept looking for all definitions which updated the `state` variable and finally stumbled upon a `paginate` function which controlled all the data being rendered on the page.
 
-## CC-U2: Orders Page does not Show Previous Orders
+### CC-U2: Orders Page does not Show Previous Orders
 
 **Reproduced:** The orders page showed no orders at all.
 
@@ -111,3 +123,25 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 **Fix:** The issue was fixed by passing the current user's device ID in [api.js](./frontend/api.js#L155) in the userId param which returned all the orders properly.
 
 **Time:** About 10 minutes spent to correlate how the actual requests were made to the API, i.e how the frontend communicated with the backend. The code is unnecessarily verbose :).
+
+### CC-U3: Auto Refresh on Counter Page Does Not Persist
+
+**Reproduced:** The auto refresh toggle on the Counter page did not persist through refreshes because its state was being saved no where. If someone turned off auto refresh and and refreshed the page, the toggle would have turned on again and the interval would have kept triggering.
+
+**Cause:** The issue was caused because the state of the toggle was not being saved.
+
+**Fix:** The fix was to simply save the state of the toggle (whether checked or unchecked) in local storage, and load that state when the counter page is rendered. Based on the value, the interval for refresh was created. Implementation can be found [here](./frontend/js/staff.js#L31).
+
+**Time:** About 5 minutes.
+
+## Notes
+I have solved almost all the bugs. I also found a few unreported ones which are documented above.
+
+The only unsolved bugs remaining are CC-04 and CC-05. I could not solve these due to a lack of CSS knowledge (especially responsiveness). I have prior experience with backend and server side dev only (my work can be found at github.com/FC5570 and github.com/ukaushik0712).
+
+While checking CC-03, I looked for the slider issue mentioned in CC-05 aswell. I could not find this, but I am not jumping to a "unreproducible" conclusion just yet since I have not extensively looked for the issue. Due to personal time constraints, I could not devote much time to this specific task, otherwise solving CC-05 aswell could have been a possibility.
+
+A few nitpicks:
+1. Dish cards have ratings with no actual ratings. Upon further investigation I found the ratings default to somewhere around the average rating for the canteen (found in [`ratings.js`](./backend/logic/ratings.js))
+2. Would be better UX if the menu prevented adding more than 30 dishes (the upper cap shown during checkout) while the order is being placed instead of at checkout.
+3. There is no way to mark an order `picked` or `refunded`. 

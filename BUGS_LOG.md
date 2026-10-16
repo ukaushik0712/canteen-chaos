@@ -1,5 +1,6 @@
 # Bug log
 
+## Bugs
 <details>
 <summary><s>CC-01 : "The search suggestions are behind everything"</s> FIXED</summary>
 
@@ -100,31 +101,13 @@ Reported by: a student
 Reported by: a student.
 </details>
 
----
+## Extras
+I have solved almost all the bugs.
 
-## Notes
+A few more bugs that I found were:
 
-- Everything above is reproducible on a fresh clone. If something doesn't
-  happen for you, inform us: a complaint that can't be reproduced is itself
-  worth reporting
-- Some of these need a particular screen size, theme or time of day to
-  show up. Part of the task is working out what :)
-- Stock can end up in a strange state while you test. Reset it with
-  `git checkout -- backend/data/` and restart the server.
+1. CC-U1: Price Filter on Menu Page shows Incosistent Results
+2. CC-U2: Orders Page does not Show Previous Orders
+3. CC-U3: Auto Refresh on Counter Page Does Not Persist
 
-## Extra credit
-
-None of this is required, and none of it is needed to clear the task. just brownie points
-
-- **Bugs that are not on this list.** there are problems in this app
-  nobody has reported yet: some in what you see on screen, some in what
-  the server does. Find one, prove it, and write it up like the rest. Say
-  how you noticed it.
-- **A test.** Any script or check that fails before your fix and passes
-  after.
-- **An honest write up** something you spotted but could not fix, or a fix
-  you are unsure about, explained clearly. scores better than silence!
-
-Try to keep this in mind: an extra fix should not break anything else! there are **negative points** for this.
-
-Good luck and have fun!
+The info for both can be found [here](./LOG.md#L93).

@@ -25,7 +25,17 @@ function stopStaffLoop() {
   staffTimer = null;
 }
 
-liveToggle.addEventListener('change', () => (liveToggle.checked ? startStaffLoop() : stopStaffLoop()));
+/**
+ * Lines 31-38 implement state persistance - fixing CC-U3
+ */
+liveToggle.checked = localStorage.getItem('cc_auto_refresh') === 'true'
+
+liveToggle.addEventListener('change', () => {
+  localStorage.setItem('cc_auto_refresh', liveToggle.checked);
+
+  if (liveToggle.checked) startStaffLoop();
+  else stopStaffLoop();
+});
 
 staffFilter.addEventListener('change', () => loadStaff());
 
