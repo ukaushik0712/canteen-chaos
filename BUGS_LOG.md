@@ -1,4 +1,4 @@
-# Bug log
+d# Bug log
 
 <details>
 <summary><s>CC-01 : "The search suggestions are behind everything"</s> FIXED</summary>
@@ -69,12 +69,14 @@ Reported by: canteen staff
 </details>
 
 
-### CC-08: "An old coupon still works"
+<details>
+<summary><s>CC-08: "An old coupon still works"</s> FIXED</summary>
 
 > "FRESHERS24 was last year's offer and it expired ages ago. Someone used
 > it yesterday and got the discount?!!"
 
 Reported by: canteen staff
+</details>
 
 
 <details>

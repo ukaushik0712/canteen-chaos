@@ -61,22 +61,5 @@
     "expiresAt": "2027-12-31T23:59:59.000Z",
     "usesLeft": 150,
     "description": "20% off before 11 AM"
-  },
-  {
-    "code": "FRESHERS24",
-    "type": "flat",
-    "value": 30,
-    "maxDiscount": 30,
-    "minOrder": 100,
-    "vegOnly": false,
-    "slots": [
-      "breakfast",
-      "lunch",
-      "evening",
-      "allday"
-    ],
-    "expiresAt": "2024-09-30T23:59:59.000Z",
-    "usesLeft": 10,
-    "description": "Expired freshers offer"
   }
 ]

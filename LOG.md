@@ -44,6 +44,18 @@ The issue was identified by following the [`validation.releaseStock`](./backend/
 
 ---
 
+## CC-08: "An old coupon still works"
+
+**Reproduced:** The code FRESHERS24 is applicable on the checkout page.
+
+**Cause:** The `GET /coupons` route at [coupons.routes.js](./backend/routes/coupons.routes.js#L22) loads the [coupons.json](./backend/data/coupons.json) file for checking the available coupons. Since the FRESHERS24 was still specified here, it was still usable.
+
+**Fix:** The FRESHERS24 object from the coupons array was removed from the JSON file.
+
+**Time:** About a minute.
+
+---
+
 ## CC-09: "The menu shows more dishes than it should"
 
 **Reproduced:** The menu page showed all 37 available dishes by default, contrary to the expected step loading behaviour.
