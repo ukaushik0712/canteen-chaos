@@ -17,10 +17,7 @@ const SLOT_WINDOWS = {
 const SLOT_ORDER = ['breakfast', 'lunch', 'evening', 'allday'];
 
 function minutesOfDay(date = new Date()) {
-  /**
-   * TODO: temp artefact
-   */
-  return 10 * 60 + date.getMinutes();
+  return date.getHours() * 60 + date.getMinutes();
 }
 
 function isCanteenOpen(date = new Date()) {

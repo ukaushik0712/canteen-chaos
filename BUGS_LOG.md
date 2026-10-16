@@ -1,21 +1,4 @@
-sd# Bug log
-Complaints were collected from students and canteen staff over the last week,
-Each one is what a person told us:
-
-nobody has looked at the code yet,
-working out the solution is your job for the following tasks! 
-
-**There are 10 problem statements** Fix as many as you can!
-Nobody is expected to finish all of them, but we suggest everyone to give a shot.
-three fixed properly beats eight fixed badly :)
-
-- For every one you fix, write it up in `LOG.md`, or any text file: how you reproduced it,
-what was  wrong, and what you changed. **This is a requirement.**
-
-you may work in any order. If one has you stuck for over an hour, leave it, **note
-what you tried**, and move on  that note is worth marks too
-
----
+d# Bug log
 
 <details>
 <summary><s>CC-01 : "The search suggestions are behind everything"</s> FIXED</summary>
@@ -29,7 +12,7 @@ Reported by: a student, on a laptop
 
 
 <details>
-<summary><s>CC-02: "Can't read anything in dark mode"</s></summary>
+<summary><s>CC-02: "Can't read anything in dark mode"</s> FIXED</summary>
 
 > "I switched the site to dark mode and now the dish names and the prices
 > are almost invisible. The grey line under the name is fine, it's just
@@ -75,14 +58,15 @@ Reported by: canteen staff
 </summary>
 
 
-### CC-07: "Cancelling makes it worse"
+<details>
+<summary><s>CC-07: "Cancelling makes it worse"</s> FIXED</summary>
 
 > "A student cancelled an order and the number of plates we have left went
 > *down* again instead of coming back. Do that a few times and the system
 > thinks we have none left when the kitchen is full"
 
 Reported by: canteen staff
-
+</details>
 
 
 ### CC-08: "An old coupon still works"
